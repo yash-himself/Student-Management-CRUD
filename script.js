@@ -170,7 +170,7 @@ function search() {
     document.getElementById("searchInput").value = "";
     students.forEach((i) => {
 
-        if (i.ID == searchterm || i.name.includes(searchterm) || i.email.includes(searchterm)) {
+        if (i.ID == searchterm || i.name.includes(searchterm) || i.email.includes(searchterm) || i.degree.includes(searchterm)) {
             let result = document.createElement("table");
             result.innerHTML =
                 `<tr><th> ${i.name}</th>
