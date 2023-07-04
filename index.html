@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Management CRUD</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://kit.fontawesome.com/acdec14f47.js" crossorigin="anonymous"></script>
+</head>
+<body>
+<nav>
+    <span class="logo">Student portal</span>
+    <div class="searchBox">
+        <input  id="searchInput" type="search" placeholder="Search Student By Name,ID or Email">
+        <BUtton onclick="search()" id="search"><img width="28px" src="search.png" alt="search"></BUtton>
+    </div>
+    <BUtton style="background-color: rgb(193, 255, 234);" onclick="showCreate()">Create student</BUtton>
+    <BUtton style="background-color: rgb(255, 225, 193);" onclick="showEdit()">Edit Student</BUtton>
+    <BUtton style="background-color: rgb(255, 193, 213);" onclick="ShowDel()">Delete student</BUtton>
+</nav>
+
+
+
+
+
+<section>
+    
+    <div id="studentDetails">
+        <Section id="searchResult">
+
+        </Section>
+        <table>
+            
+            <thead>
+            
+                <th>Student</th>
+                <th>ID</th>
+                <th>Age</th>
+                <th>Email</th>
+                <th>Degree</th>
+                <th>grade</th>
+                <th></th>
+               
+            
+            </thead>
+            <tbody id="tbody">
+                <!-- data -->
+            </tbody>
+        </table>
+    </div>
+    <div class="form" id="createform"><h2>Create Student</h2>
+        <input type="number" placeholder="Id"><input placeholder="Name" type="text"><input placeholder="Age" type="number"><input placeholder="Grade" maxlength="1" type="text"><input placeholder="Degree" type="text"><input placeholder="Email" type="email">
+        <input  style="font-weight: 700;" onclick="createValue()" value="Create" type="submit">
+    </div>
+    <div class="form" id="editform"><h2>Edit Student Info.</h2>
+        <input type="number" placeholder="Related Id"><input placeholder="Updated Name" type="text"><input placeholder="Updated Age" type="number"><input placeholder="Updated Grade" type="text"><input placeholder="Updated Degree" type="text"><input placeholder="Updated Email" type="email">
+        <input style="font-weight: 700;" onclick="editValue()" value="Edit" type="submit">
+    </div>
+    <div class="form" id="deleteform"><h2>Delete Studdent</h2>
+        <input type="number" placeholder="Id">
+        <input placeholder="Email" type="email">
+        <input style="font-weight: 700;" onclick="deleteValue()" value="Delete" type="submit">
+    </div>
+</section>
+
+    <script src="script.js"></script>
+</body>
+</html>
