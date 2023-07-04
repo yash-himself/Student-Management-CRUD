@@ -92,7 +92,8 @@ function createValue(){
     <td> ${obj.email}</td>
     <td> ${obj.degree}</td>
     <td> ${obj.grade}</td>
-    <td><button onclick="deleteValue('${obj.id},${obj.email}')" class="btn">D</button><i onclick="showEdit()" class="fa-sharp fa-solid fa-pen-to-square"></i></td>`
+    <td><i width="20px" class="fa-solid fa-trash-can" onclick="deleteValue('${obj.id}','${obj.email}')" >
+    <i onclick="showEdit()" class="fa-sharp fa-solid fa-pen-to-square"></i></td>`
     tBody.appendChild(newRow)
     students.push(obj)
     clearForm()
