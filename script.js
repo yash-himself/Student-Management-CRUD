@@ -161,16 +161,19 @@ function deleteValue(id, Email) {
 // searching functionality 
 
 
+let renderedItem = "";
 function search() {
+    
+   
     let searchterm = document.getElementById("searchInput").value;
     if (searchterm == "") {
-        alert("Invalid input..")
+        box.innerHTML = ""
+        renderedItem = ""
         return;
     }
-    document.getElementById("searchInput").value = "";
     students.forEach((i) => {
 
-        if (i.ID == searchterm || i.name.includes(searchterm) || i.email.includes(searchterm) || i.degree.includes(searchterm)) {
+        if (i.ID == searchterm || i.name.includes(searchterm) || i.degree.includes(searchterm)) {
             let result = document.createElement("table");
             result.innerHTML =
                 `<tr><th> ${i.name}</th>
@@ -179,10 +182,16 @@ function search() {
         <th> ${i.email}</th>
         <th> ${i.degree}</th>
         <th> ${i.grade}</th></tr>`
-            box.appendChild(result)
+        if (renderedItem.includes(i.email)) {
+            return;
         }
+        box.appendChild(result)
+        renderedItem = renderedItem + "" + i.email;
+      
+    }
+    
+})
 
-    })
 }
 
 
